@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/*.js": {
+    "api/**/*.js": {
       "includeFiles": "node_modules/sql.js/dist/sql-wasm.wasm"
     }
   }
