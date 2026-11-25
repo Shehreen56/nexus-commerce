@@ -74,8 +74,6 @@ git clone https://github.com/Shehreen56/nexus-commerce.git
 cd nexus-commerce
 ```
 
-Replace `YOUR_GITHUB_REPOSITORY_URL` with the actual GitHub repository URL.
-
 ### Step 2: Install Dependencies
 
 ```bash
