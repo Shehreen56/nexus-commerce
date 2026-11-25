@@ -70,7 +70,7 @@ nexus-commerce/
 ### Step 1: Clone the Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/Shehreen56/nexus-commerce.git
 cd nexus-commerce
 ```
 
