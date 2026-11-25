@@ -483,12 +483,16 @@ async function startServer() {
     await initializeDatabase();
 
     app.listen(PORT, () => {
-  console.log(`Backend running on port ${PORT}`);
-});
+      console.log(`Backend running on port ${PORT}`);
+    });
   } catch (error) {
     console.error("Server startup failed:", error);
     process.exit(1);
   }
 }
 
-startServer();
+if (require.main === module) {
+  startServer();
+}
+
+module.exports = app;
