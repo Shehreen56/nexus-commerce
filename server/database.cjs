@@ -11,7 +11,10 @@ fs.mkdirSync(path.dirname(DB_PATH), { recursive: true });
 let db;
 
 async function initializeDatabase() {
-  const SQL = await initSqlJs();
+  const SQL = await initSqlJs({
+  locateFile: (file) =>
+    path.join(__dirname, "../node_modules/sql.js/dist", file),
+});
 
   if (fs.existsSync(DB_PATH)) {
     const file = fs.readFileSync(DB_PATH);
