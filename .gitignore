@@ -1,0 +1,47 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# SQLite database files - never upload to GitHub
+*.sqlite
+*.sqlite3
+*.db
+
+# Backup files
+database-backup.sqlite
+# Private backups and personal data
+backups/
+
+# Internal privacy audit scripts
+anonymize_customers.py
+anonymize_record_6.py
+privacy_audit.py
+privacy_record_check.py
+server/anonymize-data.cjs
+server/inspect-data.cjs
