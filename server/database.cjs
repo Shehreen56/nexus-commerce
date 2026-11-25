@@ -3,11 +3,7 @@ const initSqlJs = require("sql.js");
 const fs = require("fs");
 const path = require("path");
 
-const DB_PATH = process.env.DB_PATH || (
-  process.env.VERCEL
-    ? path.join("/tmp", "database.sqlite")
-    : path.join(__dirname, "database.sqlite")
-);
+const DB_PATH = process.env.VERCEL ? "/tmp/database.sqlite" : (process.env.DB_PATH || path.join(__dirname, "database.sqlite"));
 
 fs.mkdirSync(path.dirname(DB_PATH), { recursive: true });
 
@@ -130,3 +126,4 @@ module.exports = {
   run,
   saveDatabase
 };
+
