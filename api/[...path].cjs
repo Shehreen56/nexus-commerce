@@ -1,15 +1,22 @@
-const app = require("../server/server.cjs");
-const { initializeDatabase } = require("../server/database.cjs");
+import app from "../server/server.cjs";
+import database from "../server/database.cjs";
+
+const { initializeDatabase } = database;
 
 let databaseReady;
 
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
   try {
-    databaseReady = databaseReady || initializeDatabase();
+    if (!databaseReady) {
+      databaseReady = initializeDatabase();
+    }
+
     await databaseReady;
     return app(req, res);
   } catch (error) {
     console.error("Database startup failed:", error);
-    return res.status(500).json({ message: "Backend initialization failed." });
+    return res.status(500).json({
+      message: "Backend initialization failed.",
+    });
   }
-};
+}
