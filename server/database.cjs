@@ -101,7 +101,14 @@ function getAll(sql, params = []) {
 }
 
 function getOne(sql, params = []) {
-  return getAll(sql, params)[0] || null;
+  const statement = db.prepare(sql);
+
+  try {
+    statement.bind(params);
+    return statement.step() ? statement.getAsObject() : null;
+  } finally {
+    statement.free();
+  }
 }
 
 function run(sql, params = []) {
